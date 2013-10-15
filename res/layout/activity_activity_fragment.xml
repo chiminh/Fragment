@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/listfragment"
+        android:layout_width="0dip"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        
+        <Button 
+            android:id="@+id/btn_fragmentstart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="start"
+            />
+        
+        <Button 
+            android:id="@+id/btn_fragment01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="01"
+            />
+        
+        <Button 
+            android:id="@+id/btn_fragment02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="02"
+            />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to other Fragment" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/placeholder"
+        android:layout_weight="3"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+       <fragment 
+           android:name="com.example.fragment.Fragment01"
+           android:id="@+id/fragment"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           />
+    </LinearLayout>
+
+</LinearLayout>
