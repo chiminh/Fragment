@@ -15,6 +15,7 @@ public class ActivityFragmentMain extends FragmentActivity{
 	ViewPager _viewPager;
 	View menu1;
 	View menu2;
+	View menu12;
 	
 	@Override
 	protected void onCreate(Bundle arg0) {
@@ -23,7 +24,7 @@ public class ActivityFragmentMain extends FragmentActivity{
 		setContentView(R.layout.fragment_main);
 		menu1 = (View) findViewById(R.id.menu_item_1);
 		menu2 = (View) findViewById(R.id.menu_item_2);
-		
+		menu12 = (View) findViewById(R.id.menu_item_12);
 		
 		setUpView();
 		setTab();
@@ -66,10 +67,17 @@ public class ActivityFragmentMain extends FragmentActivity{
 		case MyViewPagerAdapter.TAB_INDEX_MENU_1:
 			findViewById(R.id.image_item1).setVisibility(View.VISIBLE);
 			findViewById(R.id.image_item2).setVisibility(View.INVISIBLE);
+			findViewById(R.id.image_item12).setVisibility(View.INVISIBLE);
 			break;
 		case MyViewPagerAdapter.TAB_INDEX_MENU_2:
 			findViewById(R.id.image_item1).setVisibility(View.INVISIBLE);
 			findViewById(R.id.image_item2).setVisibility(View.VISIBLE);
+			findViewById(R.id.image_item12).setVisibility(View.INVISIBLE);
+			break;
+		case MyViewPagerAdapter.TAB_INDEX_MENU_12:
+			findViewById(R.id.image_item1).setVisibility(View.INVISIBLE);
+			findViewById(R.id.image_item2).setVisibility(View.INVISIBLE);
+			findViewById(R.id.image_item12).setVisibility(View.VISIBLE);
 			break;
 		}
 	}

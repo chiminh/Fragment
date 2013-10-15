@@ -3,6 +3,7 @@ package com.example.fragmentwithviewpager;
 import com.example.fragment.R;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,31 +16,26 @@ public class FragmentMenuItem1 extends Fragment{
 	public static final String TAG = "FragmentMenuItem1";
 	private Activity _activity;
 	ViewGroup root;
-	public static Fragment newInstance(){
+	public static Fragment newInstance(Context context){
 	
 		FragmentMenuItem1 menu1 = new FragmentMenuItem1();
 		return menu1;
 	}
-	@Override
-	public void onAttach(Activity activity) {
-		// TODO Auto-generated method stub
-		_activity = activity;
-		
-		super.onAttach(activity);
-	}
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
+		setRetainInstance(true);
 	}
 	
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		 if(root == null)
-		    	root = (ViewGroup) inflater.inflate(R.layout.fragment_menuitem_1, null);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+//		 if(root == null)
+//		    	root = (ViewGroup) inflater.inflate(R.layout.fragment_menuitem_1, null, false);
 		        
-		        return root;
+		 return inflater.inflate(R.layout.fragment_menuitem_1, null, false);
 	}
 	
 	@Override
